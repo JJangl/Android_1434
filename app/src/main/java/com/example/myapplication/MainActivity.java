@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, R.string.correct, Toast.LENGTH_SHORT).show();
                 else
                     Toast.makeText(MainActivity.this, R.string.incorrect, Toast.LENGTH_SHORT).show();
-                questionIndex++;
+                questionIndex=(questionIndex+1)%questions.length;
 
                 textView.setText(questions[questionIndex].getQuestionResId());
             }
@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, R.string.incorrect, Toast.LENGTH_SHORT).show();
                 else
                     Toast.makeText(MainActivity.this, R.string.correct, Toast.LENGTH_SHORT).show();
-                questionIndex++;
+                questionIndex=(questionIndex+1)%questions.length;
                 textView.setText(questions[questionIndex].getQuestionResId());
             }
         });
