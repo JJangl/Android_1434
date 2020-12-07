@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -54,5 +55,31 @@ public class MainActivity extends AppCompatActivity {
                 textView.setText(questions[questionIndex].getQuestionResId());
             }
         });
+    }
+    @Override
+    public void onStart(){
+        super.onStart();
+        Log.d("SYSTEM INFO","Метод onStart() запущен");
+    }
+    @Override
+    public void onResume(){
+        super.onResume();
+        Log.d("SYSTEM INFO","Метод onResume() запущен");
+    }
+    @Override
+    public void onPause(){
+        super.onPause();
+        Log.d("SYSTEM INFO","Метод onPause() запущен");
+    }
+
+    @Override
+    public void onStop(){
+        super.onStop();
+        Log.d("SYSTEM INFO","Метод onStop() запущен");
+    }
+    @Override
+    public void onDestroy(){
+        super.onDestroy();
+        Log.d("SYSTEM INFO","Метод onDestroy() запущен");
     }
 }
