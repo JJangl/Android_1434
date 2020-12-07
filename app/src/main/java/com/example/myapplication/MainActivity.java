@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
         textView=findViewById(R.id.textView);
         yesBtn=findViewById(R.id.yesBtn);
-        noBtn =findViewById(R.id.noBtn);
+        noBtn =findViewById(R.id.noBtn);//кнопка no
         textView.setText(questions[questionIndex].getQuestionResId());
         yesBtn.setOnClickListener(new View.OnClickListener() {
             @Override
