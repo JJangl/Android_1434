@@ -26,7 +26,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.d("SYSTEM INFO","Метод onCreate() запущен");
         setContentView(R.layout.activity_main);
+        if (savedInstanceState != null){ // Если есть сохранённая информация, то достаём её.
+            questionIndex = savedInstanceState.getInt("questionIndex");
+        }
+
 
         textView=findViewById(R.id.textView);
         yesBtn=findViewById(R.id.yesBtn);
@@ -71,7 +76,12 @@ public class MainActivity extends AppCompatActivity {
         super.onPause();
         Log.d("SYSTEM INFO","Метод onPause() запущен");
     }
-
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState){ // Метод сохранения данных перед уничтожением активности
+        super.onSaveInstanceState(savedInstanceState);
+        Log.d("SYSTEM INFO","Метод onSaveInstanceState() запущен");
+        savedInstanceState.putInt("questionIndex",questionIndex); // Добавили элемент по ключу
+    }
     @Override
     public void onStop(){
         super.onStop();
