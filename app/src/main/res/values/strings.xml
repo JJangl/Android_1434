@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="correct">Правильно</string>
+    <string name="incorrect">Не Правильно</string>
+    <string name="question1">2+2=4</string>
+    <string name="question2">8–5=4</string>
+    <string name="question3">9–4=6</string>
+    <string name="question4">3+4=7</string>
+    <string name="question5">6–2=4</string>
+    <string name="yes">Да</string>
+    <string name="no">Нет</string>
+
+</resources>
