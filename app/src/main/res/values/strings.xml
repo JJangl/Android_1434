@@ -11,4 +11,6 @@
     <string name="no">Нет</string>
     <string name="correct_answer">Правильный ответ:</string>
     <string name="show_answer">Показать ответ</string>
+    <string name="end_result"> Итоговый результат</string>
+    <string name="show_result">Показать результат</string>
 </resources>

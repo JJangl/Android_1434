@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     private Button yesBtn;
     private Button noBtn;
     private Button showAnswer;
+    private Button showResult;
     private Question [] questions =new Question[] {
         new Question(R.string.question1,true),
         new Question(R.string.question2,false),
@@ -34,12 +35,14 @@ public class MainActivity extends AppCompatActivity {
             questionIndex = savedInstanceState.getInt("questionIndex");
         }
 
-
         textView=findViewById(R.id.textView);
         yesBtn=findViewById(R.id.yesBtn);
         noBtn =findViewById(R.id.noBtn);//кнопка no
         showAnswer = findViewById(R.id.showAnswer);
+        showResult = findViewById(R.id.showResult);
+
         textView.setText(questions[questionIndex].getQuestionResId());
+        //КНОПКА ДА
         yesBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -52,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
                 textView.setText(questions[questionIndex].getQuestionResId());
             }
         });
+        //КНОПКА НЕТ
         noBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -63,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
                 textView.setText(questions[questionIndex].getQuestionResId());
             }
         });
-
+//обращение к answer
         showAnswer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -72,6 +76,16 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        //обращение к result
+        showResult.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, ResultActivity.class);//намерение открыть resultact
+                intent.putExtra("result",questions[questionIndex].toString());//как передать массив
+                startActivity(intent);
+            }
+        });
+
     }//
     @Override
     public void onStart(){
